@@ -1,0 +1,10 @@
+{
+  "name": "mekamind-commerce-mvp",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "MekaMind product catalog, service requests, admin dashboard, Cloudflare Pages Functions and D1 database",
+  "scripts": {
+    "check": "node scripts/check.mjs"
+  }
+}
