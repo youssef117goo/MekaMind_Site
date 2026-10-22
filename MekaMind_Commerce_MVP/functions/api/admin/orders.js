@@ -1,3 +1,0 @@
-import { json, requireDb } from '../../_shared/http.js';
-import { requireAdmin } from '../../_shared/auth.js';
-export async function onRequestGet(c){const g=await requireAdmin(c);if(g.error)return g.error;try{const {results=[]}=await requireDb(c.env).prepare('SELECT id,order_number,name,phone,order_type,item_name,quantity,timeline,details,status,admin_notes,notification_status,notification_error,created_at,updated_at FROM orders ORDER BY created_at DESC LIMIT 500').all();return json({orders:results});}catch(e){console.error('orders admin GET:',e.message);return json({message:'تعذر تحميل الطلبات.'},503);}}
